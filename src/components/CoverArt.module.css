@@ -1,0 +1,60 @@
+.frame {
+  position: relative;
+  aspect-ratio: var(--cover-aspect);
+  overflow: hidden;
+  background: var(--surface-raised);
+}
+
+.cover,
+.contain {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.25s ease-out;
+}
+
+.cover {
+  object-fit: cover;
+}
+
+.contain {
+  object-fit: contain;
+}
+
+.cover[data-loaded],
+.contain[data-loaded] {
+  opacity: 1;
+}
+
+/* The same image, blurred, fills the space beside a cover shown whole. */
+.backdrop {
+  position: absolute;
+  inset: -12%;
+  width: 124%;
+  height: 124%;
+  max-width: none;
+  object-fit: cover;
+  filter: blur(18px) brightness(0.5) saturate(1.2);
+}
+
+.titleTile {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 14px;
+  height: 100%;
+  padding: 24px;
+  background: radial-gradient(circle at 50% 35%, #232a34, var(--surface-raised) 70%);
+  color: var(--text-secondary);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+}

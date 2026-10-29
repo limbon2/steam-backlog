@@ -1,0 +1,127 @@
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+/* Steam's banner sits on the right and fades in behind the text, as in the mockup. */
+.art {
+  position: absolute;
+  inset: 0 0 0 auto;
+  z-index: -1;
+  width: 76%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center 40%;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 34%);
+  mask-image: linear-gradient(to right, transparent, #000 34%);
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+}
+
+.art[data-loaded] {
+  opacity: 1;
+}
+
+.content {
+  max-width: 560px;
+  padding: 31px 37px 32px;
+  text-shadow: 0 2px 14px rgb(0 0 0 / 0.55);
+}
+
+.eyebrow {
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.title {
+  display: -webkit-box;
+  margin-top: 8px;
+  overflow: hidden;
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.hours {
+  margin-top: 9px;
+  color: var(--text-secondary);
+  font-size: 24px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 14px;
+  color: var(--text-secondary);
+  font-size: 18px;
+}
+
+.finished {
+  color: var(--success);
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  height: 52px;
+  margin-top: 30px;
+  padding: 0 42px 0 40px;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: #fff;
+  font-size: 19px;
+  font-weight: 500;
+  text-shadow: none;
+  transition: background 0.15s;
+}
+
+.action:hover {
+  background: var(--accent-hover);
+}
+
+.secondary {
+  background: var(--surface-strong);
+}
+
+.secondary:hover {
+  background: #343b46;
+}
+
+@media (max-width: 720px) {
+  .art {
+    width: 100%;
+    -webkit-mask-image: linear-gradient(to top, rgb(0 0 0 / 0.2), #000 80%);
+    mask-image: linear-gradient(to top, rgb(0 0 0 / 0.2), #000 80%);
+  }
+
+  .content {
+    padding: 22px 20px 20px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .hours {
+    font-size: 19px;
+  }
+
+  .action {
+    height: 46px;
+    font-size: 17px;
+  }
+}

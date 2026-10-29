@@ -1,0 +1,91 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition:
+    border-color 0.15s,
+    transform 0.15s;
+  /* Lets the browser skip laying out tiles far off screen in big libraries. */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 400px;
+}
+
+.card:hover {
+  border-color: var(--border-strong);
+}
+
+.body {
+  padding: 10px 16px 12px;
+}
+
+.title {
+  overflow: hidden;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.35;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.hours {
+  margin-top: 2px;
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  margin: 6px 0 0 -6px;
+  padding: 3px 9px 3px 6px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: none;
+  color: var(--text-secondary);
+  font-size: 16px;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+
+.status:hover {
+  background: var(--surface-raised);
+  color: var(--text);
+}
+
+.status:not(.finished):hover svg {
+  color: var(--success);
+}
+
+.finished,
+.finished:hover {
+  color: var(--success);
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+  }
+
+  .body {
+    padding: 10px 12px 12px;
+  }
+
+  .title {
+    font-size: 15px;
+  }
+
+  .hours,
+  .status {
+    font-size: 14px;
+  }
+}

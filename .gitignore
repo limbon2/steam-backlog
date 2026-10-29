@@ -1,0 +1,8 @@
+node_modules/
+dist/
+# Your Steam API key and finished marks live here.
+data/
+*.log
+.DS_Store
+# Local Claude Code settings.
+.claude/

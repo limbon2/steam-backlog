@@ -1,0 +1,38 @@
+:root {
+  color-scheme: dark;
+
+  --bg: #0e1116;
+  --surface: #13171d;
+  --surface-raised: #1b2027;
+  --surface-strong: #282e37;
+  --border: #232931;
+  --border-strong: #2f3640;
+
+  --text: #f3f5f8;
+  --text-secondary: #c9d0d8;
+  --text-muted: #949ca7;
+
+  --accent: #2a9d84;
+  --accent-hover: #32b294;
+  --success: #3fcf73;
+  --danger: #f2707a;
+
+  --font: 'Fira Sans', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Mono', Consolas, monospace;
+
+  --radius-sm: 6px;
+  --radius: 8px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  --gutter: 36px;
+  --content-width: 1680px;
+  /* Tile proportions from the mockup; Steam's vertical capsule fills it with the logo intact. */
+  --cover-aspect: 289 / 281;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --gutter: 16px;
+  }
+}
